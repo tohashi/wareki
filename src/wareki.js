@@ -32,7 +32,7 @@ export default function(value = Date.now()) {
       if (eraYear === 1) {
         eraYear = '元'
       }
-      wareki = `${eraData.jaName}${eraYear}年`;
+      wareki = `${eraData.jaName}${eraYear}`;
       break;
     }
   }
