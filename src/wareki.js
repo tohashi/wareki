@@ -17,7 +17,7 @@ const eraDataList = [
   }
 ];
 
-export default function(value = Date.now()) {
+export default function(value = Date.now(), opts = {}) {
   const dateObj = new Date(value);
   const year = dateObj.getFullYear();
   const month = dateObj.getMonth() + 1;
@@ -35,6 +35,9 @@ export default function(value = Date.now()) {
       wareki = `${eraData.jaName}${eraYear}`;
       break;
     }
+  }
+  if (opts.unit) {
+    wareki += '年';
   }
   return wareki;
 }
