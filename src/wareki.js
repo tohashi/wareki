@@ -1,15 +1,15 @@
 const eraDataList = [
   {
     jaName: '平成',
-    firstDate: '1989-01-08',
+    firstDate: '1989-01-08'
   },
   {
     jaName: '昭和',
-    firstDate: '1926-12-25',
+    firstDate: '1926-12-25'
   },
   {
     jaName: '大正',
-    firstDate: '1912-07-30',
+    firstDate: '1912-07-30'
   },
   {
     jaName: '明治',
@@ -30,7 +30,7 @@ export default function(value = Date.now(), opts = {}) {
     if (dateObj - eraFirstDateObj >= 0) {
       let eraYear = year - eraFirstDateObj.getFullYear() + 1;
       if (eraYear === 1) {
-        eraYear = '元'
+        eraYear = '元';
       }
       wareki = `${eraData.jaName}${eraYear}`;
       break;
@@ -41,4 +41,3 @@ export default function(value = Date.now(), opts = {}) {
   }
   return wareki;
 }
-
