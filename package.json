@@ -10,7 +10,7 @@
     "test:cov": "nyc ava && nyc report | coveralls",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "lint:fix": "tslint -c tslint.json 'src/**/*.ts' --fix",
-    "prepublishOnly": "build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
