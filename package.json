@@ -7,7 +7,7 @@
     "build": "babel src --extensions \".ts\" --out-dir lib",
     "check": "tsc",
     "test": "tsc && ava",
-    "prepublish": "build"
+    "prepublishOnly": "build"
   },
   "repository": {
     "type": "git",
