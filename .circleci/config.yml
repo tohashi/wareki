@@ -7,5 +7,5 @@ jobs:
       - checkout
       - run: npm install
       - run: npx tsc
-      - run: npm run test-cov
+      - run: npm run test:cov
       - run: npm run build
