@@ -48,8 +48,8 @@ export default function(
     wareki += '年';
   }
 
-  if (!isNaN(parseInt(wareki))) {
-    return parseInt(wareki);
+  if (!isNaN(Number(wareki))) {
+    return Number(wareki);
   }
   return wareki;
 }
