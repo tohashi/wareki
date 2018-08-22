@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --extensions \".ts\" --out-dir lib",
     "check": "tsc",
-    "test": "nyc ava",
+    "test": "ava",
     "test-cov": "nyc ava && nyc report | coveralls",
     "prepublishOnly": "build"
   },

@@ -1,22 +1,33 @@
 type Options = {
   unit?: boolean;
+  newEraEnabled?: boolean;
+  newEraName?: string;
 };
 
 const eraDataList = [
   {
-    jaName: '平成',
+    code: 'newEra',
+    name: '新元号',
+    firstDate: '2019-05-01'
+  },
+  {
+    code: 'heisei',
+    name: '平成',
     firstDate: '1989-01-08'
   },
   {
-    jaName: '昭和',
+    code: 'showa',
+    name: '昭和',
     firstDate: '1926-12-25'
   },
   {
-    jaName: '大正',
+    code: 'taisho',
+    name: '大正',
     firstDate: '1912-07-30'
   },
   {
-    jaName: '明治',
+    code: 'meiji',
+    name: '明治',
     firstDate: '1868-01-25'
   }
 ];
@@ -33,14 +44,23 @@ export default function(
   let wareki = `${year}`;
 
   for (let i = 0; i < eraDataList.length; i++) {
-    let eraData = eraDataList[i];
-    let eraFirstDateObj = new Date(eraData.firstDate);
+    const eraData = eraDataList[i];
+    const { code, firstDate } = eraData;
+    let { name } = eraData;
+    if (code === 'newEra') {
+      if (!opts.newEraEnabled) {
+        continue;
+      } else if (opts.newEraName != null) {
+        name = opts.newEraName;
+      }
+    }
+    const eraFirstDateObj = new Date(firstDate);
     if (dateObj.getTime() - eraFirstDateObj.getTime() >= 0) {
       let eraYear = `${year - eraFirstDateObj.getFullYear() + 1}`;
       if (eraYear === '1') {
         eraYear = '元';
       }
-      wareki = `${eraData.jaName}${eraYear}`;
+      wareki = `${name}${eraYear}`;
       break;
     }
   }
