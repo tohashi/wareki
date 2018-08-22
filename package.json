@@ -2,10 +2,12 @@
   "name": "wareki",
   "version": "0.0.6",
   "description": "",
-  "main": "lib/wareki.js",
+  "main": "lib/index.js",
   "scripts": {
-    "prepublish": "babel src --out-dir lib",
-    "test": "ava"
+    "build": "babel src --extensions \".ts\" --out-dir lib",
+    "check": "tsc",
+    "test": "tsc && ava",
+    "prepublish": "build"
   },
   "repository": {
     "type": "git",
@@ -21,16 +23,22 @@
     "@babel/cli": "^7.0.0-rc.1",
     "@babel/core": "^7.0.0-rc.1",
     "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-typescript": "^7.0.0-rc.1",
     "@babel/register": "^7.0.0-rc.1",
-    "ava": "1.0.0-beta.6"
+    "ava": "1.0.0-beta.6",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
   },
   "files": [
     "lib"
   ],
-  "dependencies": {},
   "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
     "require": [
-      "@babel/register"
+      "ts-node/register"
     ]
   }
 }

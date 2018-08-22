@@ -1,3 +1,7 @@
+type Options = {
+  unit?: boolean;
+};
+
 const eraDataList = [
   {
     jaName: '平成',
@@ -17,19 +21,23 @@ const eraDataList = [
   }
 ];
 
-export default function(value = Date.now(), opts = {}) {
+export default function(
+  value: string | number = Date.now(),
+  opts: Options = {}
+): string | number {
   const dateObj = new Date(value);
   const year = dateObj.getFullYear();
-  const month = dateObj.getMonth() + 1;
-  const date = dateObj.getDate();
-  let wareki = year;
+  if (isNaN(year)) {
+    return year;
+  }
+  let wareki = `${year}`;
 
   for (let i = 0; i < eraDataList.length; i++) {
     let eraData = eraDataList[i];
     let eraFirstDateObj = new Date(eraData.firstDate);
-    if (dateObj - eraFirstDateObj >= 0) {
-      let eraYear = year - eraFirstDateObj.getFullYear() + 1;
-      if (eraYear === 1) {
+    if (dateObj.getTime() - eraFirstDateObj.getTime() >= 0) {
+      let eraYear = `${year - eraFirstDateObj.getFullYear() + 1}`;
+      if (eraYear === '1') {
         eraYear = '元';
       }
       wareki = `${eraData.jaName}${eraYear}`;
@@ -38,6 +46,10 @@ export default function(value = Date.now(), opts = {}) {
   }
   if (opts.unit) {
     wareki += '年';
+  }
+
+  if (!isNaN(parseInt(wareki))) {
+    return parseInt(wareki);
   }
   return wareki;
 }

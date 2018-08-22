@@ -1,5 +1,5 @@
 import test from 'ava';
-import wareki from './src/wareki';
+import wareki from './src/index';
 
 test('returns era year', t => {
   t.is(wareki('2018-01-01'), '平成30');
@@ -23,5 +23,5 @@ test('returns era year', t => {
 });
 
 test('invalid date returns NaN', t => {
-  t.is(wareki(20180101), '昭和45');
+  t.is(wareki('invalid'), NaN);
 })
