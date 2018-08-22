@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: npm run lint
       - run: npx tsc
       - run: npm run test:cov
       - run: npm run build
