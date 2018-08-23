@@ -8,8 +8,8 @@
     "check": "tsc",
     "test": "ava",
     "test:cov": "nyc ava && nyc report | coveralls",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "lint:fix": "tslint -c tslint.json 'src/**/*.ts' --fix",
+    "lint": "tslint -c tslint.json './*.ts'",
+    "lint:fix": "tslint -c tslint.json './*.ts' --fix",
     "prepublishOnly": "npm run build"
   },
   "repository": {
