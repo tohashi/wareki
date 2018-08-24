@@ -7,27 +7,27 @@ interface IOptions {
 const eraDataList = [
   {
     code: 'newEra',
-    firstDate: '2019-05-01',
+    firstDate: '2019-05-01T00:00:00.000Z',
     name: '新元号'
   },
   {
     code: 'heisei',
-    firstDate: '1989-01-08',
+    firstDate: '1989-01-08T00:00:00.000Z',
     name: '平成'
   },
   {
     code: 'showa',
-    firstDate: '1926-12-25',
+    firstDate: '1926-12-25T00:00:00.000Z',
     name: '昭和'
   },
   {
     code: 'taisho',
-    firstDate: '1912-07-30',
+    firstDate: '1912-07-30T00:00:00.000Z',
     name: '大正'
   },
   {
     code: 'meiji',
-    firstDate: '1868-01-25',
+    firstDate: '1868-01-25T00:00:00.000Z',
     name: '明治'
   }
 ]
@@ -36,11 +36,17 @@ export default function(
   value: string | number = Date.now(),
   opts: IOptions = {}
 ): string | number {
-  const dateObj = new Date(value)
-  const year = dateObj.getFullYear()
-  if (isNaN(year)) {
-    return year
+  let dateObj = new Date(value)
+  if (dateObj.toString() === 'Invalid Date') {
+    return NaN
   }
+  // Adjust for timezone when specifying only date
+  if (/^\d{4}(\/|-)\d{1,2}(\/|-)\d{1,2}$/.test(`${value}`)) {
+    dateObj = new Date(
+      dateObj.getTime() - dateObj.getTimezoneOffset() * 60 * 1000
+    )
+  }
+  const year = dateObj.getUTCFullYear()
   let wareki = `${year}`
 
   for (const eraData of eraDataList) {
@@ -55,7 +61,7 @@ export default function(
     }
     const eraFirstDateObj = new Date(firstDate)
     if (dateObj.getTime() - eraFirstDateObj.getTime() >= 0) {
-      let eraYear = `${year - eraFirstDateObj.getFullYear() + 1}`
+      let eraYear = `${year - eraFirstDateObj.getUTCFullYear() + 1}`
       if (eraYear === '1') {
         eraYear = '元'
       }

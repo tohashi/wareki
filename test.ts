@@ -21,6 +21,7 @@ test('returns era year', t => {
   t.is(wareki(0), '昭和45')
   t.is(wareki(10000), '昭和45')
   t.is(wareki(1000000), '昭和45')
+  t.is(wareki(-1), '昭和44')
 })
 
 test('invalid date returns NaN', t => {
