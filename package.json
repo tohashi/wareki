@@ -29,7 +29,7 @@
     "@babel/preset-typescript": "7.0.0",
     "@babel/register": "7.0.0",
     "ava": "1.0.0-beta.8",
-    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-add-module-exports": "0.3.3",
     "coveralls": "3.0.2",
     "nyc": "12.0.2",
     "prettier": "1.14.2",
