@@ -5,7 +5,7 @@ jobs:
       - image: circleci/node:10.15
     steps:
       - checkout
-      - run: npm install
+      - run: npm ci
       - run: npm run lint
       - run: npx tsc
       - run: npm run test:cov
