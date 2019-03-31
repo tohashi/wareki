@@ -1,4 +1,4 @@
-interface IOptions {
+type Options = {
   unit?: boolean
   newEraEnabled?: boolean
   newEraName?: string
@@ -33,8 +33,8 @@ const eraDataList = [
 ]
 
 export default function(
-  value: string | number = Date.now(),
-  opts: IOptions = {}
+  value: string | number | undefined = Date.now(),
+  opts: Options = {}
 ): string | number {
   const dateObj = new Date(value)
   const year = dateObj.getFullYear()
