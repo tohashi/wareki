@@ -70,9 +70,6 @@
       "html",
       "text-lcov"
     ],
-    "require": [
-      "ts-node/register"
-    ],
     "sourceMap": false,
     "all": true
   }
