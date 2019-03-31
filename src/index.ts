@@ -1,8 +1,4 @@
-type Options = {
-  unit?: boolean
-  newEraEnabled?: boolean
-  newEraName?: string
-}
+type Options = { unit?: boolean }
 
 const eraDataList = [
   {
@@ -44,15 +40,8 @@ export default function(
   let wareki = `${year}`
 
   for (const eraData of eraDataList) {
-    const { code, firstDate } = eraData
+    const { firstDate } = eraData
     let { name } = eraData
-    if (code === 'newEra') {
-      if (!opts.newEraEnabled) {
-        continue
-      } else if (opts.newEraName != null) {
-        name = opts.newEraName
-      }
-    }
     const eraFirstDateObj = new Date(firstDate)
     if (dateObj.getTime() - eraFirstDateObj.getTime() >= 0) {
       let eraYear = `${year - eraFirstDateObj.getFullYear() + 1}`

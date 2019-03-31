@@ -21,9 +21,5 @@ wareki('1989-01-08')
 wareki('2018-08-01', { unit: true })
 // -> 平成30年
 wareki('2019-05-01')
-// -> 平成31
-wareki('2019-05-01', { newEraEnabled: true })
 // -> 新元号元
-wareki('2019-05-01', { unit: true, newEraEnabled: true, newEraName: '元気モリモリご飯パワー' })
-// -> 元気モリモリご飯パワー元年
 ```
