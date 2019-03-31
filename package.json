@@ -41,7 +41,8 @@
     "typescript": "3.4.1"
   },
   "files": [
-    "lib"
+    "lib",
+    "wareki.d.ts"
   ],
   "ava": {
     "compileEnhancements": false,
