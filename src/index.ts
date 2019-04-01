@@ -2,9 +2,9 @@ type Options = { unit?: boolean }
 
 const eraDataList = [
   {
-    code: 'newEra',
+    code: 'reiwa',
     firstDate: '2019-05-01',
-    name: '新元号'
+    name: '令和'
   },
   {
     code: 'heisei',
