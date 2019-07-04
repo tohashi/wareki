@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/tohashi/wareki#readme",
   "devDependencies": {
-    "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.5",
-    "@babel/preset-env": "7.4.5",
+    "@babel/cli": "7.5.0",
+    "@babel/core": "7.5.0",
+    "@babel/preset-env": "7.5.0",
     "@babel/preset-typescript": "7.3.3",
     "@babel/register": "7.4.4",
     "ava": "2.1.0",
