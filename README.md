@@ -1,7 +1,6 @@
 # wareki
 
 [![CircleCI](https://circleci.com/gh/tohashi/wareki/tree/master.svg?style=svg)](https://circleci.com/gh/tohashi/wareki/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/tohashi/wareki/badge.svg?branch=master)](https://coveralls.io/github/tohashi/wareki?branch=master)
 
 ## Installation
 
