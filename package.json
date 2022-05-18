@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
-  "typings": "./wareki.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "babel src --extensions \".ts\" --out-dir lib",
-    "check": "tsc",
+    "build": "tsc -p ./tsconfig.json",
+    "check": "tsc --noEmit",
     "test": "vitest run",
     "test:cov": "vitest run --coverage | coveralls",
-    "lint": "tslint -c tslint.json './*.ts'",
-    "lint:fix": "tslint -c tslint.json './*.ts' --fix",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -24,27 +22,12 @@
   },
   "homepage": "https://github.com/tohashi/wareki#readme",
   "devDependencies": {
-    "@babel/cli": "7.17.10",
-    "@babel/core": "7.17.12",
-    "@babel/preset-env": "7.17.12",
-    "@babel/preset-typescript": "7.17.12",
-    "@babel/register": "7.17.7",
-    "ava": "4.2.0",
-    "babel-plugin-add-module-exports": "1.0.4",
     "coveralls": "3.1.1",
-    "nyc": "15.1.0",
     "prettier": "2.6.2",
-    "ts-node": "10.7.0",
-    "tslint": "5.20.1",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.3.0",
     "typescript": "4.6.4",
-    "vitest": "^0.12.6"
+    "vitest": "0.12.6"
   },
-  "files": [
-    "lib",
-    "wareki.d.ts"
-  ],
+  "files": ["lib"],
   "ava": {
     "compileEnhancements": false,
     "extensions": [
