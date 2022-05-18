@@ -8,7 +8,8 @@
     "build": "tsc -p ./tsconfig.json",
     "check": "tsc --noEmit",
     "test": "vitest run",
-    "test:cov": "vitest run --coverage | coveralls",
+    "lint": "eslint ./src && prettier --check ./src",
+    "lint:fix": "eslint --fix ./src && prettier --write ./src",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -22,40 +23,16 @@
   },
   "homepage": "https://github.com/tohashi/wareki#readme",
   "devDependencies": {
-    "coveralls": "3.1.1",
+    "@typescript-eslint/eslint-plugin": "5.25.0",
+    "@typescript-eslint/parser": "5.25.0",
+    "c8": "7.11.3",
+    "eslint": "8.15.0",
+    "eslint-config-prettier": "8.5.0",
     "prettier": "2.6.2",
     "typescript": "4.6.4",
     "vitest": "0.12.6"
   },
-  "files": ["lib"],
-  "ava": {
-    "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "match": "*",
-    "failFast": false,
-    "timeout": "10000",
-    "serial": false,
-    "concurrency": "5",
-    "verbose": true,
-    "tap": false
-  },
-  "nyc": {
-    "include": [
-      "./src/**/*.ts"
-    ],
-    "extension": [
-      ".ts"
-    ],
-    "reporter": [
-      "html",
-      "text-lcov"
-    ],
-    "sourceMap": false,
-    "all": true
-  }
+  "files": [
+    "lib"
+  ]
 }
