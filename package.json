@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/tohashi/wareki#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.30.6",
-    "@typescript-eslint/parser": "5.30.6",
+    "@typescript-eslint/eslint-plugin": "5.30.7",
+    "@typescript-eslint/parser": "5.30.7",
     "c8": "7.11.3",
     "eslint": "8.20.0",
     "eslint-config-prettier": "8.5.0",
