@@ -29,7 +29,7 @@
     "eslint": "8.47.0",
     "eslint-config-prettier": "9.0.0",
     "prettier": "2.8.8",
-    "typescript": "5.1.6",
+    "typescript": "5.2.2",
     "vitest": "0.34.2"
   },
   "files": [
