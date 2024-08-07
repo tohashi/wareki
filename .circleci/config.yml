@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:22.5.1
+      - image: cimg/node:22.6.0
     steps:
       - checkout
       - run: npm ci
