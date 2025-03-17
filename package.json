@@ -30,7 +30,7 @@
     "eslint-config-prettier": "10.1.1",
     "prettier": "2.8.8",
     "typescript": "5.8.2",
-    "vitest": "3.0.8"
+    "vitest": "3.0.9"
   },
   "files": [
     "lib"
